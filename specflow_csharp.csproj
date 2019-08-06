@@ -11,18 +11,21 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ApplicationDefinition Include="Features\SpecFlowFeature1.feature.cs">
+    <ApplicationDefinition Include="Features\Login.feature.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
-      <DependentUpon>SpecFlowFeature1.feature</DependentUpon>
+      <DependentUpon>Login.feature</DependentUpon>
     </ApplicationDefinition>
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.2.0" />
     <PackageReference Include="NUnit" Version="3.12.0" />
     <PackageReference Include="Selenium.Chrome.WebDriver" Version="76.0.0" />
     <PackageReference Include="Selenium.WebDriver" Version="3.141.0" />
     <PackageReference Include="SpecFlow" Version="3.0.225" />
+    <PackageReference Include="SpecFlow.NUnit" Version="3.0.225" />
+    <PackageReference Include="SpecFlow.NUnit.Runners" Version="3.0.225" />
     <PackageReference Include="SpecFlow.Tools.MsBuild.Generation" Version="3.0.225" />
   </ItemGroup>
 
@@ -42,10 +45,14 @@
   </ItemGroup>
 
   <ItemGroup>
-    <SpecFlowFeatureFiles Update="Features\SpecFlowFeature1.feature">
+    <SpecFlowFeatureFiles Update="Features\Login.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>SpecFlowFeature1.feature.cs</LastGenOutput>
+      <LastGenOutput>Login.feature.cs</LastGenOutput>
     </SpecFlowFeatureFiles>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Helpers\" />
   </ItemGroup>
 
 </Project>
