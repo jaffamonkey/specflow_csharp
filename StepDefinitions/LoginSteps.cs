@@ -16,8 +16,9 @@ namespace specflow_csharp.CodeBindings
         public void GivenTheUserIsOnTheLoginPage()
         {
             driver = new ChromeDriver();
+            driver.Manage().Window.Maximize();
             driver.Navigate().GoToUrl(base_url);
-
+           
         }
         
         [When(@"they enter valid admin credentials add")]
@@ -31,7 +32,8 @@ namespace specflow_csharp.CodeBindings
         [Then(@"they should be taken to the home page")]
         public void ThenTheyShouldBeTakenToTheHomePage()
         {
-            Assert.That(driver.FindElement(By.CssSelector("#column_0 > div > div.widget-header.row_0 > span")).Text.Equals("ENROLLM"));
+            Assert.That(driver.FindElement(By.CssSelector("#column_0 > div > div.widget-header.row_0 > span")).Text.Equals("ENROLLMENTS"));
+            driver.Quit();
         }
     }
 }
