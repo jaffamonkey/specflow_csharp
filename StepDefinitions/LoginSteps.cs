@@ -4,18 +4,25 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using NUnit.Framework;
 
-namespace specflow_csharp.CodeBindings
+namespace specflow_csharp.steps
 {
+
     [Binding]
     public class LoginSteps
     {
+        private readonly ChromeDriver driver;
+
+
         private const string base_url = "https://preview.netdimensions.com/preview/servlet/ekp/login?target=%2Fpreview%2Fservlet%2Fekp%2FpageLayout";
-        IWebDriver driver;
+        // Declare the webriver instance
+
+        public LoginSteps() => driver = new ChromeDriver();
+
 
         [Given(@"the user is on the login page")]
         public void GivenTheUserIsOnTheLoginPage()
         {
-            driver = new ChromeDriver();
+            //create a new Chrome instance
             driver.Manage().Window.Maximize();
             driver.Navigate().GoToUrl(base_url);
            
